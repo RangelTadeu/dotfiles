@@ -41,6 +41,5 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/rangeltadeu/packer
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 
-vim.api.nvim_set_keymap('i', '<CR>', 'vim.lsp.buf.completion_item_resolve()', { noremap = true, silent = true })
 
 end)
