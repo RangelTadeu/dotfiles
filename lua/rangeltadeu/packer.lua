@@ -60,4 +60,20 @@ return require('packer').startup(function(use)
       config = function() require("nvim-autopairs").setup {} end
   }
 
+  -- debugging
+  use("mfussenegger/nvim-dap")
+  use("leoluz/nvim-dap-go")
+  use("rcarriga/nvim-dap-ui")
+  use("theHamsta/nvim-dap-virtual-text")
+  use("nvim-telescope/telescope-dap.nvim")
+
+  -- JS, TS
+  use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
+
+  use {
+      "microsoft/vscode-js-debug",
+      opt = true,
+      run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out" 
+  }
+
 end)
